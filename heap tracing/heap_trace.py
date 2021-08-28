@@ -14,8 +14,10 @@ def get_address(localAddr):
 		print localAddr + " not found."
 		return None
 	if result_count > 1:
-		print "[-] Warning, more than one result for", localAddr	
-	return res.split()[0]
+		print "[-] Warning, more than one result for", localAddr
+	addr = res.split()[0]
+	addr = addr.replace("`", "")
+	return addr
 	
 #RtlAllocateHeap(
 # IN PVOID                HeapHandle,
